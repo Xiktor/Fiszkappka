@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/main_layout.html}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="pl">
+
+    <div layout:fragment="content">
+        <h1 class="text-center mt-3">Rozwiąż sprawdzian</h1>
+        <hr/>
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <form action="#" th:action="@{/test/testEnd}" th:object="${test}" method="post">
+                    <div class="form-group">
+                        Przetłumacz: <label for="userAnswer1" th:text="*{question1}" style="font-weight:bold"></label>
+                        <input class="form-control" type="text" th:field="*{userAnswer1}" id="userAnswer1" />
+                    </div>
+                    <div class="form-group">
+                        Przetłumacz: <label for="userAnswer2" th:text="*{question2}" style="font-weight:bold"></label>
+                        <input class="form-control" type="text" th:field="*{userAnswer2}" id="userAnswer2" />
+                    </div>
+                    <div class="form-group">
+                        Przetłumacz: <label for="userAnswer3" th:text="*{question3}" style="font-weight:bold"></label>
+                        <input class="form-control" type="text" th:field="*{userAnswer3}" id="userAnswer3" />
+                    </div>
+                    <input type="hidden" class="form-control" th:field="*{id}" readonly="readonly" id="test-id" />
+                    <div class="text-center pt-3">
+                        <button type="submit" class="btn btn-primary mt-2 text-right">
+                            Zakończ
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</html>

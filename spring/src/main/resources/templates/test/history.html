@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/main_layout.html}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="pl">
+
+<div layout:fragment="content">
+    <h1 class="text-center mt-3">Historia sprawdzianów</h1>
+    <hr/>
+    <div class="row mt-4">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Lp</th>
+                    <th>Język</th>
+                    <th>Wynik</th>
+                    <th>Data</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="test, iterStat : ${listTests}">
+                    <td th:text="${iterStat.index + 1}">Lp</td>
+                    <td th:text="${test.languageName}">Język</td>
+                    <td th:text="${test.score}">Wynik</td>
+                    <td th:text="${test.resolved}">Data</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</html>

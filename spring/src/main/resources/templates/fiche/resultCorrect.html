@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/main_layout.html}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="pl">
+
+    <div layout:fragment="content">
+        <h1 class="text-center mt-3">Rozwiązano fiszkę</h1>
+        <hr/>
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center mt-3">Dobrze! :)</h2>
+                <div class="text-center pt-3">
+                    <button onclick="location.href='/fiche/solve'" class="btn btn-primary mt-2 text-right">
+                       Losuj kolejną
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

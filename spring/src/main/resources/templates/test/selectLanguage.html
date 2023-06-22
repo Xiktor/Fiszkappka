@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/main_layout.html}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="pl">
+
+<div layout:fragment="content">
+    <h1 class="text-center mt-3">Rozpocznij sprawdzian</h1>
+    <hr/>
+    <div class="row mt-4">
+        <div class="col-md-6 offset-md-3">
+            <form action="#" th:action="@{/test/testStart}" th:object="${language}" method="post">
+                <div class="form-group">
+                    <select class="form-control"
+                            name="language"
+                            th:field="*{id}">
+                        <option th:each="language : ${languages}"
+                                th:value="${language.id}"
+                                th:text="${language.name}">
+                        </option>
+                    </select>
+                </div>
+                <div class="text-center pt-3">
+                    <button type="submit" class="btn btn-primary mt-2 text-right">
+                        Rozpocznij
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</html>

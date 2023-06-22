@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/main_layout.html}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="pl">
+
+    <div layout:fragment="content">
+        <h1 class="text-center mt-3">Rozwiąż fiszkę</h1>
+        <hr/>
+        <div class="row mt-4">
+            <div class="col-md-6 offset-md-3">
+                <form action="#" th:action="@{/fiche/checkout}" th:object="${fiche}"
+                      method="post">
+                    <div>
+                        To jest fiszka w języku: <label th:text="*{languageName}" style="font-weight:bold"></label>
+                    </div>
+                    <hr/>
+                    <div>
+                        Termin w języku ojczystym: <label th:text="*{wordInMotherLanguage}" style="font-weight:bold"></label>
+                    </div>
+                    <hr/>
+                    <div class="form-group">
+                        <label for="fiche-wordInForeignLanguage">Termin w języku obcym</label>
+                        <input class="form-control" type="text" name="wordInForeignLanguage" value="" id="fiche-wordInForeignLanguage" />
+                        <div th:if="${#fields.hasErrors('wordInForeignLanguage')}"
+                             th:errors="*{wordInForeignLanguage}"
+                             class="invalid-feedback d-block">
+                            Proszę uzupełnić to pole.
+                        </div>
+                    </div>
+                    <input type="hidden" class="form-control" th:field="*{id}" readonly="readonly" id="fiche-id" />
+                    <input type="hidden" class="form-control" th:field="*{wordInMotherLanguage}" readonly="readonly" id="fiche-wordInMotherLanguage" />
+                    <div class="text-center pt-3">
+                        <button type="submit" class="btn btn-primary mt-2 text-right">
+                            Wyślij
+                        </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

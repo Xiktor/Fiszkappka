@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layouts/main_layout.html}"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="pl">
+
+    <div layout:fragment="content">
+        <h1 class="text-center mt-3">Pomyślnie zakończono sprawdzian</h1>
+        <hr/>
+        <div class="row mt-4">
+            <div class="col-md-8 offset-md-2">
+                <div class="text-center">
+                    <h3 class="text-center mt-3">Twój wynik <label th:text="${test.score}" style="font-weight:bold"></label>/100.</h3>
+                </div>
+                <br>
+                <hr/>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Termin po polsku</th>
+                        <th>Termin po angielsku</th>
+                        <th>Twoja odpowiedź</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td th:text="${test.question1}"></td>
+                        <td th:text="${test.correctAnswer1}"></td>
+                        <td th:text="${test.userAnswer1}"></td>
+                    </tr>
+                    <tr>
+                        <td th:text="${test.question2}"></td>
+                        <td th:text="${test.correctAnswer2}"></td>
+                        <td th:text="${test.userAnswer2}"></td>
+                    </tr>
+                    <tr>
+                        <td th:text="${test.question3}"></td>
+                        <td th:text="${test.correctAnswer3}"></td>
+                        <td th:text="${test.userAnswer3}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-center pt-3">
+                <button onclick="location.href='/language/select'" class="btn btn-primary mt-2 text-right">
+                    Rozpocznij kolejny sprawdzian
+                </button>
+            </div>
+        </div>
+    </div>
+</html>
