@@ -1,7 +1,7 @@
-Readme w wersji pdf: [README.pdf](https://github.com/Xiktor/Fiszkappka/files/11833006/README.pdf)
+Readme w wersji pdf: [README.pdf](https://github.com/Xiktor/Fiszkappka/files/11833701/README.pdf)
 
 # Cel projektu 
-Celem projektu było utworzenie prototypu aplikacji MVC w języku Java z zastosowaniem freamworka Spring Boot. Aplikacja miała komunikować się z relacyjną bazą danych oraz spełniać minimum 5 wymagań funkcjonalnych i 5 niefunkcjonalnych.
+Celem projektu było utworzenie prototypu aplikacji MVC w języku Java z zastosowaniem frameworka Spring Boot. Aplikacja miała komunikować się z relacyjną bazą danych oraz spełniać minimum 5 wymagań funkcjonalnych i 5 niefunkcjonalnych.
 
 
 # Stack technologiczny
